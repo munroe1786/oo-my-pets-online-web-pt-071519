@@ -43,16 +43,18 @@ class Owner
   end
   
   def feed_cats
-    Cat.all.select {|cat| cat.mood = 'happy'}
+    cats.each {|cat| cat.mood = 'happy'}
   end
   
   def walk_dogs
-    Dog.all.select {|dog| dog.mood = 'happy'}
+    dogs.each {|dog| dog.mood = 'happy'}
   end
   
   def sell_pets
-    pets = cats.flatten{dogs}
+    pets = (cats << dogs).flatten
+    
     pets.each { |pet| pet.mood = 'nervous'}
+    
   end
   
   def list_pets
