@@ -12,6 +12,7 @@ class Owner
     @@all << self
     @cats = [ ]
     @dogs = [ ]
+    @pets = [ ]
   end
   
   def say_species
@@ -55,7 +56,7 @@ class Owner
   end
   
   def sell_pets
-    pets = @cats.flatten(dogs)
+    @pets = @cats.flatten(dogs)
     pets.each { |pet| pet.mood = 'nervous'}
   end
   
