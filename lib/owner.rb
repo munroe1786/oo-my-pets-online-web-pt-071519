@@ -2,17 +2,12 @@ class Owner
 
   attr_reader :name, :species
   
-  attr_accessor :cat, :dog
-  
   @@all = [ ]
   
   def initialize(name)
     @name = name
     @species = "human"
     @@all << self
-    @cats = [ ]
-    @dogs = [ ]
-    @pets = [ ]
   end
   
   def say_species
@@ -56,12 +51,12 @@ class Owner
   end
   
   def sell_pets
-    @pets = @cats.flatten(dogs)
+    pets = cats.flatten(dogs)
     pets.each { |pet| pet.mood = 'nervous'}
   end
   
   def list_pets
-    "I have #{self.dog.length} dogs, and #{Cat.length} cats." 
+    "I have dogs, and cats." 
   end
   
 end
